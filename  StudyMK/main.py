@@ -2,6 +2,7 @@ import sys
 from PyQt5.QtWidgets import(QApplication, QWidget, QLabel, QVBoxLayout, QHBoxLayout, QPushButton, QStackedWidget)
 from data.database import setup_database
 setup_database()
+from ui.task_manager import TaskManager
 
 class MainWindow(QWidget):
     def __init__(self):
@@ -28,7 +29,7 @@ class MainWindow(QWidget):
         #make the pages
 
         self.pages = QStackedWidget()
-        self.page_tasks = QLabel("Tasks Page")
+        self.page_tasks = TaskManager()
         self.page_timer = QLabel("Timer Page")
         self.page_notes = QLabel("Notes Page")
         self.page_flashcards = QLabel("Flashcards Page")
